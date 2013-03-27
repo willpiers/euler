@@ -120,6 +120,15 @@ end
 # end
 # puts sum - primes.last
 
+# ########################## Problem Twelve
+# num = 1
+# next_integer = 2
+# while distinct_divisors(num) < 500
+# 	num += next_integer
+# 	next_integer += 1
+# end
+# puts num
+
 # ########################## Problem Thirteen
 # This should abolutely not be here. we should be reading in from numbers.txt
 # a = [
@@ -375,6 +384,7 @@ end
 # 	end
 # end
 # puts count
+
 
 
 
