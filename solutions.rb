@@ -297,6 +297,24 @@ end
 # end
 # puts count
 
+# ########################## Problem Thirty-Four
+class Integer
+	def fact
+		(1..self).inject(1) { |f,n| f*n }
+	end
+end
+
+# drought = 0; nums = []; test = 3;
+# while drought < 50000
+# 	if test.to_s.split('').inject(0) { |sum, e| sum += e.to_i.fact } == test
+# 		nums << test
+# 	else
+# 		drought += 1
+# 	end
+# 	test += 1
+# end
+# puts nums.inject(0) { |sum, e| sum += e }
+
 # ########################## Problem Forty-Seven
 def prime_divisors(number)
 	s = Set.new
@@ -384,8 +402,6 @@ end
 # 	end
 # end
 # puts count
-
-
 
 
 
