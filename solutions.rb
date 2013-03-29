@@ -302,6 +302,15 @@ class Integer
 	def fact
 		(1..self).inject(1) { |f,n| f*n }
 	end
+	# this next method is for problem 46
+	def primes
+		p = [2]; test = 3
+		until p.length == self
+			p << test if smallest_factor(test) == test
+			test += 2
+		end
+		p
+	end
 end
 
 # drought = 0; nums = []; test = 3;
@@ -314,6 +323,27 @@ end
 # 	test += 1
 # end
 # puts nums.inject(0) { |sum, e| sum += e }
+
+# ########################## Problem Forty-Six
+# 	for the first 500 numbers
+# 	take the number's square and double it.
+# 	add each prime to it and call that number x
+# 	increase the entry in the numbers array corresponding to x by 1
+# 	at the end, any number in the numbers array that still has a zero entry is a counter
+# 	example to goldbach's other theorem (conjecture).
+
+# bound = 10000; primes = 1000.primes; numbers = [0] * (bound)
+# (1..bound).each do |n|
+# 	x = 2*(n**2)
+# 	primes.each { |p| numbers[(p + x)] += 1 unless p+x > bound-1 }
+# end
+
+# numbers.each_with_index do |num, index|
+# 	if index.odd? && num == 0 && smallest_factor(index) != index
+# 		puts "#{index}"
+# 		break
+# 	end
+# end
 
 # ########################## Problem Forty-Seven
 def prime_divisors(number)
@@ -402,6 +432,8 @@ end
 # 	end
 # end
 # puts count
+
+
 
 
 
