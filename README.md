@@ -1,0 +1,1 @@
+[![Stories in Ready](http://badge.waffle.io/willpiers/euler.png)](http://waffle.io/willpiers/euler)
