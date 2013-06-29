@@ -225,14 +225,47 @@ class Integer
 	def fact
 		(1..self).inject(1) { |f,n| f*n }
 	end
+	def is_prime?
+		return true if smallest_factor(self) == self
+		false
+	end
 	# this next method is for problem 46
 	def primes
+		return [] if self == 0
+		return 'Fuck you, man' if self < 0
 		p = [2]; test = 3
 		until p.length == self
 			p << test if smallest_factor(test) == test
 			test += 2
 		end
 		p
+	end
+	def to_binary
+		number = self
+		return 1 if number == 1
+		return 10 if number == 2
+		power = 0
+		until 2**power >= number
+			power += 1
+			if 2**power == number
+				binary_digits = [1] + [0]*(power-1)
+				return binary_digits.map { |dig| dig.to_s }.join
+			end
+		end
+
+		power -= 1
+		binary_digits = [0]*power
+
+		(0..binary_digits.length).each do |digit_number|
+			if 2**power <= number
+				binary_digits[digit_number] = 1
+				number = number - 2**power
+			else
+				binary_digits[digit_number] = 0
+			end
+			power -= 1
+		end
+		binary_digits.map { |dig| dig.to_s }.join.to_i
 	end
 end
 
@@ -246,6 +279,36 @@ end
 # 	test += 1
 # end
 # puts nums.inject(0) { |sum, e| sum += e }
+
+# ########################## Problem Thirty-Five
+# primes_below_one_million = 78500.primes
+# circular_prime_count = 0
+
+# primes_below_one_million.each do |prime|
+# 	break if prime >= 1000000
+# 	digits = prime.to_s.split('')
+
+# 	digits.length.times do |times|
+# 		new_number = digits.rotate.join.to_i
+# 		break unless new_number.is_prime?
+# 		if times == (digits.length - 1)
+# 			circular_prime_count += 1
+# 		end
+# 		digits = digits.rotate
+# 	end
+# end
+# puts circular_prime_count
+
+# ########################## Problem Thirty-Six
+# palindromes_in_both_bases = []
+
+# 1.upto 1000000 do |num|
+# 	if num.to_s == num.to_s.reverse && num.to_binary.to_s == num.to_binary.to_s.reverse
+# 		palindromes_in_both_bases << num
+# 	end
+# end
+
+# puts palindromes_in_both_bases.reduce(:+)
 
 # ########################## Problem Forty-Six
 # 	for the first 500 numbers
@@ -307,6 +370,8 @@ end
 # puts Time.now - start
 
 # ########################## Problem Ninety-Two  -- this takes about 25 minutes
+# there is a method, Array#permutations, that could greatly reduce the time on this problem. for any number that arrives at 89, all permutations will also arrive at 89
+
 # nums_arriving_at_89 = [89]
 # (2..10000000).each do |number|
 # 	n = number
@@ -348,7 +413,7 @@ end
 # ########################## Problem One-Hundred-Seventy-Nine (Terrible) runtime: ~4 hours
 # count = 0
 # prev_count = 1
-# 1.upto(10**1 - 1) do |test|
+# 1.upto(10**5 - 1) do |test|
 # 	next_count = distinct_divisors(test + 1)
 # 	if prev_count == next_count
 # 		count += 1
@@ -377,9 +442,6 @@ end
 # 	end
 # end
 # puts count
-
-
-
 
 
 
