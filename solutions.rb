@@ -90,6 +90,24 @@ end
 # end
 # puts (candidate - 1)
 
+# ########################## Problem Eight
+# number = ''
+# File.open 'thousand_digits.txt', 'r' do |f|
+# 	while line = f.gets
+# 		number << line
+# 	end
+# end
+# largest_product = 1
+# index = 0
+# until index == number.length - 4
+# 	prod = number[index..(index+4)].split('').map { |d| d.to_i }.reduce :*
+# 	if prod > largest_product
+# 		largest_product = prod
+# 	end
+# 	index += 1
+# end
+# puts largest_product
+
 # ########################## Problem Nine
 # triplets = []
 # 500.times do |a|
@@ -356,6 +374,13 @@ end
 # end
 # puts test
 
+# ########################## Problem Forty-Eight
+# sum_mod = 0
+# 1.upto 1000 do |num|
+# 	sum_mod += num**num % 10**11
+# end
+# puts sum_mod % 10**10
+
 # ########################## Problem Sixty-Three
 # start = Time.now
 # count = 0
@@ -442,6 +467,9 @@ end
 # 	end
 # end
 # puts count
+
+
+nothing important
 
 
 
