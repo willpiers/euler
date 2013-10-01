@@ -1,51 +1,5 @@
 require 'set'
 timer_start = Time.now
-# ########################### Problem One
-# sum = 0
-# 1000.times do |number|
-# 	if number % 3 == 0 || number % 5 == 0
-# 		sum += number
-# 	end
-# end
-# puts sum
-
-# ############################ Problem Two
-# fib = [1,2]
-# n = 1
-# while fib[n] + fib[n-1] <= 4000000
-# 	fib.push(fib[n] + fib[n-1])
-# 	n += 1
-# end
-# sum = 0
-# fib.each do |test|
-# 	if test % 2 == 0
-# 		sum += test
-# 	end
-# end
-# puts sum
-
-# ########################## Problem Three
-# test = 600851475143
-def smallest_factor(number)
-	sqrt = Math.sqrt(number).ceil
-	2.upto(sqrt) do |factor|
-		if number % factor == 0
-			return factor
-		end
-	end
-	return number
-end
-# puts smallest_factor(test)
-# puts test/smallest_factor(test)
-# test = test/smallest_factor(test)
-# puts smallest_factor(test)
-# puts test/smallest_factor(test)
-# test = test/smallest_factor(test)
-# puts smallest_factor(test)
-# puts test/smallest_factor(test)
-# test = test/smallest_factor(test)
-# puts smallest_factor(test)
-# puts test/smallest_factor(test)
 
 # ########################## Problem Four
 # array = []
