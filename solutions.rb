@@ -238,6 +238,17 @@ end
 # end
 # puts count
 
+# ########################## Problem Thirty
+# solutions = []
+# 2.upto(1000000) do |n|
+# 	digits = n.to_s.split('')
+#   result = digits.inject(0) { |sum, num| sum += num.to_i**5 }
+#   if result == n
+#   	solutions << n
+#   end
+# end
+# puts solutions.reduce(:+)
+
 # ########################## Problem Thirty-Four
 class Integer
 	def fact
@@ -469,7 +480,6 @@ end
 # puts count
 
 
-nothing important
 
 
 
