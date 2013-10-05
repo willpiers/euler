@@ -1,20 +1,6 @@
 require 'set'
 timer_start = Time.now
 
-# ########################## Problem Four
-# array = []
-# 100.times do |num1|
-# 	x = 1000 - num1
-# 	100.times do |num2|
-# 		y = 1000 - num2
-# 		test = (x*y).to_s
-# 		if test == test.reverse
-# 		array.push test
-# 		end
-# 	end
-# end
-# puts array.sort.last
-# answer = 906609
 
 # ########################## Problem Five
 # answer = 1
