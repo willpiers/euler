@@ -1,4 +1,4 @@
-require '../euler_methods'
+require_relative '../euler_methods'
 include EulerMethods
 
 big_number = 600851475143
