@@ -23,7 +23,7 @@ timer_start = Time.now
 # prime_count = 0
 # candidate = 2
 # while prime_count < 10001
-# 	if smallest_factor(candidate) == candidate
+# 	if candidate.least_factor == candidate
 # 		prime_count += 1
 # 	end
 # 	candidate += 1
@@ -68,8 +68,8 @@ timer_start = Time.now
 # candidate = 3
 # sum = 0
 # while largest_prime < 2000000
-# # The smallest_factor mehtod was defined for use in problem Three
-# 	if candidate == smallest_factor(candidate)
+# # The least_factor mehtod was defined for use in problem Three
+# 	if candidate == candidate.least_factor
 # 		primes.push candidate
 # 		sum += candidate
 # 	end
@@ -195,7 +195,7 @@ class Integer
 		(1..self).inject(1) { |f,n| f*n }
 	end
 	def is_prime?
-		return true if smallest_factor(self) == self
+		return true if self.least_factor == self
 		false
 	end
 	# this next method is for problem 46
@@ -204,7 +204,7 @@ class Integer
 		return 'Fuck you, man' if self < 0
 		p = [2]; test = 3
 		until p.length == self
-			p << test if smallest_factor(test) == test
+			p << test if test.least_factor == test
 			test += 2
 		end
 		p
@@ -294,7 +294,7 @@ end
 # end
 
 # numbers.each_with_index do |num, index|
-# 	if index.odd? && num == 0 && smallest_factor(index) != index
+# 	if index.odd? && num == 0 && index.least_factor != index
 # 		puts "#{index}"
 # 		break
 # 	end
@@ -302,13 +302,13 @@ end
 
 # ########################## Problem Forty-Seven
 def prime_divisors(number)
-	s = Set.new
+	divisors = Set.new
 	until number == 1
-		f = smallest_factor(number)
-		s << f
-		number = number/f
+		prime_divisor = number.least_factor
+		divisors << prime_divisor
+		number = number/prime_divisor
 	end
-	return s
+	divisors
 end
 # test = 1
 # in_a_row = 0
