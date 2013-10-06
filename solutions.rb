@@ -1,23 +1,7 @@
 require 'set'
+require_relative './euler_methods'
 timer_start = Time.now
 
-
-# ########################## Problem Five
-# answer = 1
-# 1.upto(20) do |num|
-# 	answer = num.lcm(answer)
-# end
-# puts answer
-# better solution ==> num = (1..20).inject(1) { |result,n| result.lcm n }
-
-# ########################## Problem Six
-# sum_of_squares = (1..100).inject(0) { |sum, term| sum + term**2 }
-# square_of_sum = 0
-# (1..100).each do |a|
-# 	square_of_sum += a
-# end
-# square_of_sum = square_of_sum**2
-# puts square_of_sum - sum_of_squares
 
 # ########################## Problem Seven
 # prime_count = 0
@@ -301,15 +285,6 @@ end
 # end
 
 # ########################## Problem Forty-Seven
-def prime_divisors(number)
-	divisors = Set.new
-	until number == 1
-		prime_divisor = number.least_factor
-		divisors << prime_divisor
-		number = number/prime_divisor
-	end
-	divisors
-end
 # test = 1
 # in_a_row = 0
 # while true
