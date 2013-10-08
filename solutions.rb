@@ -2,21 +2,6 @@ require 'set'
 require_relative './euler_methods'
 timer_start = Time.now
 
-
-# ########################## Problem Nine
-# triplets = []
-# 500.times do |a|
-# 	(a+1).upto(500) do |b|
-# 		(b+1).upto(500) do |c|
-# 			if ( a**2 + b**2 == c**2 ) && a + b + c == 1000
-# 				puts "#{a} + #{b} + #{c} = 1000 and is a pythagorean triple"
-# 				puts "#{a} * #{b} * #{c} = #{a*b*c}"
-# 				break
-# 			end
-# 		end
-# 	end
-# end
-
 # ########################## Problem Ten
 # primes = [2]
 # largest_prime = 2
