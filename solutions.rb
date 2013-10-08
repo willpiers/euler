@@ -3,35 +3,6 @@ require_relative './euler_methods'
 timer_start = Time.now
 
 
-# ########################## Problem Seven
-# prime_count = 0
-# candidate = 2
-# while prime_count < 10001
-# 	if candidate.least_factor == candidate
-# 		prime_count += 1
-# 	end
-# 	candidate += 1
-# end
-# puts (candidate - 1)
-
-# ########################## Problem Eight
-# number = ''
-# File.open 'thousand_digits.txt', 'r' do |f|
-# 	while line = f.gets
-# 		number << line
-# 	end
-# end
-# largest_product = 1
-# index = 0
-# until index == number.length - 4
-# 	prod = number[index..(index+4)].split('').map { |d| d.to_i }.reduce :*
-# 	if prod > largest_product
-# 		largest_product = prod
-# 	end
-# 	index += 1
-# end
-# puts largest_product
-
 # ########################## Problem Nine
 # triplets = []
 # 500.times do |a|
