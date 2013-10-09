@@ -1,27 +1,18 @@
-require 'set'
-
-class Integer
-	def least_factor
-		return nil if self < 0
-		number = self
-		sqrt = Math.sqrt(number).ceil
-		2.upto(sqrt) do |factor|
-			if number % factor == 0
-				return factor
+module EulerMethods
+	def primes_under prime_limit
+		primes = []
+		numbers = [0]*(prime_limit+1)
+		sqrt = Math.sqrt(prime_limit).ceil
+		2.upto(sqrt) do |divisor|
+			iteration = 2
+			while iteration*divisor <= prime_limit
+				index = divisor*iteration
+				numbers[index] += 1
+				iteration += 1
 			end
 		end
-		return number
-	end
-
-	def prime_divisors
-		number = self
-		return [] if number <= 1
-		divisors = Set.new
-		until number == 1
-			prime_divisor = number.least_factor
-			divisors << prime_divisor
-			number = number/prime_divisor
-		end
-		divisors.to_a
+		numbers.map.with_index do |divisors, index|
+			numbers[index] == 0 ? index : nil
+		end.compact[2..-1]
 	end
 end
