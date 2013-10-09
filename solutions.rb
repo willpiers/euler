@@ -17,6 +17,8 @@ timer_start = Time.now
 # 	largest_prime = primes.last
 # end
 # puts sum - primes.last
+# puts primes_under(2000000).reduce(:+)
+
 
 # ########################## Problem Twelve
 # num = 1
@@ -142,12 +144,13 @@ class Integer
 	def primes
 		return [] if self == 0
 		return 'Fuck you, man' if self < 0
-		p = [2]; test = 3
-		until p.length == self
-			p << test if test.least_factor == test
+		list = [2]
+		test = 3
+		until list.length == self
+			list << test if test.is_prime?
 			test += 2
 		end
-		p
+		list
 	end
 	def to_binary
 		number = self
@@ -349,7 +352,6 @@ end
 # 	end
 # end
 # puts count
-
 
 
 
