@@ -1,4 +1,4 @@
-require_relative '../euler_methods'
+require_relative '../core_ext/integer'
 
 big_number = 600851475143
 prime_factors = []
