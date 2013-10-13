@@ -15,4 +15,20 @@ module EulerMethods
 			numbers[index] == 0 ? index : nil
 		end.compact[2..-1]
 	end
+
+	def distinct_divisors(num)
+		#returns the number of distinct divisors for num, including 1 and num
+		count = 0
+		sqrt = Math.sqrt(num)
+		1.upto(sqrt) do |candidate|
+			if num%candidate == 0
+				unless candidate == sqrt
+					count += 2
+				else
+					count += 1
+				end
+			end
+		end
+		count
+	end
 end

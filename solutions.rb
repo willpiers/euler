@@ -3,15 +3,6 @@ require_relative './euler_methods'
 timer_start = Time.now
 
 
-# ########################## Problem Twelve
-# num = 1
-# next_integer = 2
-# while distinct_divisors(num) < 500
-# 	num += next_integer
-# 	next_integer += 1
-# end
-# puts num
-
 # ########################## Problem Thirteen
 # new_number_array = []
 # File.open 'numbers.txt', 'r' do |f|
@@ -45,21 +36,6 @@ def divisors(num)
 		end
 	end
 	divs
-end
-def distinct_divisors(num)
-	#returns the number of distinct divisors for num, including 1 and num
-	count = 0
-	sqrt = Math.sqrt(num)
-	1.upto(sqrt) do |candidate|
-		if num%candidate == 0
-			unless candidate == sqrt
-				count += 2
-			else
-				count += 1
-			end
-		end
-	end
-	count
 end
 def sum_of_divisors(num)
 	divisors(num).inject(0) { |sum,divisor| sum + divisor }
