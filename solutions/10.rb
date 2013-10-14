@@ -1,6 +1,5 @@
 require_relative '../core_ext/integer'
 require_relative '../euler_methods'
-include EulerMethods
 
 # primes = [2]
 # largest_prime = 2
@@ -17,4 +16,4 @@ include EulerMethods
 # end
 # puts sum - primes.last
 
-puts primes_under(2000000).reduce(:+)
+puts EulerMethods.primes_under(2000000).reduce(:+)

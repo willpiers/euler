@@ -1,5 +1,5 @@
 module EulerMethods
-	def primes_under prime_limit
+	def self.primes_under prime_limit
 		primes = []
 		numbers = [0]*(prime_limit+1)
 		sqrt = Math.sqrt(prime_limit).ceil
@@ -16,19 +16,20 @@ module EulerMethods
 		end.compact[2..-1]
 	end
 
-	def distinct_divisors(num)
-		#returns the number of distinct divisors for num, including 1 and num
-		count = 0
-		sqrt = Math.sqrt(num)
+	def self.distinct_divisors number
+		number = (-1)*number if number < 0
+		divisors = Set.new
+		sqrt = Math.sqrt(number)
 		1.upto(sqrt) do |candidate|
-			if num%candidate == 0
+			if number % candidate == 0
 				unless candidate == sqrt
-					count += 2
+					divisors << candidate
+					divisors << number/candidate
 				else
-					count += 1
+					divisors << candidate
 				end
 			end
 		end
-		count
+		divisors
 	end
 end

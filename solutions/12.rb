@@ -4,7 +4,7 @@ include EulerMethods
 
 num = 1
 next_integer = 2
-while distinct_divisors(num) < 500
+while EulerMethods.distinct_divisors(num).count < 500
 	num += next_integer
 	next_integer += 1
 end
