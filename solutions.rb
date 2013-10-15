@@ -2,18 +2,6 @@ require 'set'
 require_relative './euler_methods'
 timer_start = Time.now
 
-
-# ########################## Problem Thirteen
-# new_number_array = []
-# File.open 'numbers.txt', 'r' do |f|
-# 	while line = f.gets
-# 		new_number_array << line[0..15].to_i
-# 	end
-# end
-
-# sum = new_number_array.inject(0) { |sum,e| sum += e }
-# puts sum.to_s[0..9]
-
 # ########################## Problem Sixteen
 # digits = (2**1000).to_s.split("")
 # sum = 0
