@@ -2,12 +2,6 @@ require 'set'
 require_relative './euler_methods'
 timer_start = Time.now
 
-# ########################## Problem Sixteen
-# digits = (2**1000).to_s.split("")
-# sum = 0
-# digits.each { |digit| sum += digit.to_i }
-# puts sum
-
 # ########################## Problem Twenty
 # fact = (1..100).inject(1) { |factorial, num| factorial*num }
 # b = fact.to_s.split('').inject(0) { |sum, char| sum + char.to_i }
