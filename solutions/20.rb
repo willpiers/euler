@@ -1,4 +1,3 @@
-# ########################## Problem Twenty
-factorial = (1..100).inject(1) { |factorial, num| factorial*num }
-b = factorial.to_s.split('').inject(0) { |sum, char| sum + char.to_i }
-puts b
+require_relative "../core_ext/integer"
+
+puts (1..100).reduce(1, :*).digits.reduce(:+)
