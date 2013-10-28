@@ -27,7 +27,7 @@ describe Integer do
 
 	describe '#prime_divisors' do
 		it "returns an object of class Array" do
-		  expect(50.prime_divisors.class).to eq Array
+		  expect(50.prime_divisors).to be_an Array
 		end
 
 		context "when handed a prime number" do
@@ -43,10 +43,21 @@ describe Integer do
 		end
 
 		context "when given 1 or 0" do
-		  it "should return an empty array" do
+		  it "returns an empty array" do
 		    expect(1.prime_divisors).to eq []
 		    expect(0.prime_divisors).to eq []
 		  end
+		end
+	end
+
+	describe '#digits' do
+		it "returns an Array" do
+		  expect(50.digits).to be_an Array
+		end
+
+		it "returns an Array with as many entries as the number is long" do
+		  expect(50.digits.length).to eq 2
+		  expect(100.digits.length).to eq 3
 		end
 	end
 end

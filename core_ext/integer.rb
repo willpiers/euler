@@ -24,4 +24,8 @@ class Integer
 		end
 		divisors.to_a
 	end
+
+	def digits
+		self.to_s.split('').map {|n| n.to_i}
+	end
 end
