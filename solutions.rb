@@ -2,11 +2,6 @@ require 'set'
 require_relative './euler_methods'
 timer_start = Time.now
 
-# ########################## Problem Twenty
-# fact = (1..100).inject(1) { |factorial, num| factorial*num }
-# b = fact.to_s.split('').inject(0) { |sum, char| sum + char.to_i }
-# puts b
-
 # ########################## Problem Twenty-One
 def divisors(num)
 	# returns an array containing all of the proper divisors, including duplicates i.e. divisors(9) = [1,3,3]
@@ -84,7 +79,7 @@ class Integer
 	# this next method is for problem 46
 	def primes
 		return [] if self == 0
-		return 'Fuck you, man' if self < 0
+		return "don't do that" if self < 0
 		list = [2]
 		test = 3
 		until list.length == self
