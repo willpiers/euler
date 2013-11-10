@@ -28,4 +28,19 @@ class Integer
 	def digits
 		self.to_s.split('').map {|n| n.to_i}
 	end
+
+	def divisors
+		divs = Set.new
+		1.upto(Math.sqrt(self).floor) do |candidate|
+			if self%candidate == 0
+				divs << candidate
+				divs << self/candidate unless candidate == 1
+			end
+		end
+		divs.to_a
+	end
+
+	def sum_of_divisors
+		divisors.reduce(:+)
+	end
 end

@@ -3,28 +3,15 @@ require_relative './euler_methods'
 timer_start = Time.now
 
 # ########################## Problem Twenty-One
-def divisors(num)
-	# returns an array containing all of the proper divisors, including duplicates i.e. divisors(9) = [1,3,3]
-	divs = []
-	1.upto(Math.sqrt(num).floor) do |candidate|
-		if num%candidate == 0
-			divs << candidate
-			divs << num/candidate unless candidate == 1
-		end
+
+amicables = []
+1.upto(10000) do |num|
+	test = sum_of_divisors(num)
+	if sum_of_divisors(test) == num && test != num
+		amicables << num
 	end
-	divs
 end
-def sum_of_divisors(num)
-	divisors(num).inject(0) { |sum,divisor| sum + divisor }
-end
-# amicables = []
-# 1.upto(10000) do |num|
-# 	test = sum_of_divisors(num)
-# 	if sum_of_divisors(test) == num && test != num
-# 		amicables << num
-# 	end
-# end
-# puts amicables.inject(0) { |sum,num| sum+num }
+puts amicables.inject(0) { |sum,num| sum+num }
 
 # ########################## Problem Twenty-Two
 # File.open 'names.txt', 'r' do |f|
