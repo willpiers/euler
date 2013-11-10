@@ -2,17 +2,6 @@ require 'set'
 require_relative './euler_methods'
 timer_start = Time.now
 
-# ########################## Problem Twenty-One
-
-amicables = []
-1.upto(10000) do |num|
-	test = sum_of_divisors(num)
-	if sum_of_divisors(test) == num && test != num
-		amicables << num
-	end
-end
-puts amicables.inject(0) { |sum,num| sum+num }
-
 # ########################## Problem Twenty-Two
 # File.open 'names.txt', 'r' do |f|
 # 	string_rep = f.to_a.first
