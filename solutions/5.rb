@@ -1,6 +1,6 @@
 # answer = 1
 # 1.upto(20) do |num|
-# 	answer = num.lcm(answer)
+#   answer = num.lcm(answer)
 # end
 # puts answer
 

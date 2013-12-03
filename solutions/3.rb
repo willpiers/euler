@@ -5,9 +5,9 @@ prime_factors = []
 product_of_primes = 1
 
 loop do
-	prime_factors << (big_number/product_of_primes).least_factor
-	product_of_primes = prime_factors.inject(1, :*)
+  prime_factors << (big_number/product_of_primes).least_factor
+  product_of_primes = prime_factors.inject(1, :*)
 
-	break if product_of_primes == big_number
+  break if product_of_primes == big_number
 end
 puts prime_factors.last
