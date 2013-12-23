@@ -2,47 +2,6 @@ require 'set'
 require_relative './euler_methods'
 timer_start = Time.now
 
-# ########################## Problem Twenty-Two
-# File.open 'names.txt', 'r' do |f|
-#   string_rep = f.to_a.first
-#   names = string_rep.split(',').sort
-#   letter_values = {}
-#   ('A'..'Z').each_with_index do |letter, index|
-#     letter_values[letter] = index + 1
-#   end
-
-#   sum = 0
-#   names.each_with_index do |name, i|
-#     value = name.split('').inject(0) do |sum,letter|
-#       sum += letter_values[letter].to_i
-#     end
-#     value *= (i+1)
-#     sum += value
-#   end
-#   puts sum
-# end
-
-# ########################## Problem Twenty-Five
-# i,j,k = 0,1,1
-# count = 1
-# until k.to_s.size >= 1000
-#   k = i+j
-#   i, j = j, k
-#   count += 1
-# end
-# puts count
-
-# ########################## Problem Thirty
-# solutions = []
-# 2.upto(1000000) do |n|
-#   digits = n.to_s.split('')
-#   result = digits.inject(0) { |sum, num| sum += num.to_i**5 }
-#   if result == n
-#     solutions << n
-#   end
-# end
-# puts solutions.reduce(:+)
-
 # ########################## Problem Thirty-Four
 class Integer
   def fact

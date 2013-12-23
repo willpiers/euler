@@ -6,7 +6,6 @@ require_relative '../euler_methods'
 # candidate = 3
 # sum = 0
 # while largest_prime < 2000000
-# # The least_factor mehtod was defined for use in problem Three
 #   if candidate == candidate.least_factor
 #     primes.push candidate
 #     sum += candidate
